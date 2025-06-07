@@ -1,0 +1,3 @@
+#dire a ansible que je bosse en local (machien où tourne ansible)
+
+localhost ansible_connection=local

@@ -1,0 +1,21 @@
+- name: Installer et démarrer NGINX
+  hosts: localhost # On cible la machine local
+  become: yes # On eleve les droits en sudo
+  tasks:
+    - name: Installer NGINX
+      apt: 
+        name: NGINX
+        state: present
+        update_cache: yes #On met à jour les paquets
+
+    - name: Démarrer NGINX
+      service: #demarre et assure le démarrage 
+        name: NGINX
+        state: started  #On démarre le service nginx
+        enabled: yes    #On active pour le démarrage automatique
+
+#port 80 est le port par défaut pas besoin de le mettre accessible en localhost
+
+
+
+
